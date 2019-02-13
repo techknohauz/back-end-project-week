@@ -35,7 +35,7 @@ We recommend that you finish all the MVP features before trying to deploy.
   - Modify your front-end so that it uses your newly created Web API.
 
 Upon your first commit, please submit a Pull Request and add _both_ the **Trello Set Up** and **Backend MVP Features** Task lists to your first Pull Request comment.
-
+https://trello.com/b/K3c2xsyQ/lambda-notesbackend-robin-familara
 ---
 
 **Once you have completed the "Minimum Viable Product" requirements, message your project manager for approval**. If approved, you may continue to deploy and work on the Extra Features. Please add the Extra Features you implement to the list you added to the comment on your first PR.
