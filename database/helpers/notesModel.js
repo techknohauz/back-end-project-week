@@ -7,8 +7,10 @@ const db = require("../dbConfig");
   remove
 };
 
- function get() {
-  return db("notes");
+function get(id) {
+    const query = db("notes");
+    if (id) return query.where({ _id: Number(id) }).first();
+    return query;
 }
 
  function insert(note) {
