@@ -1,0 +1,30 @@
+{
+  "name": "back-end-project-week",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon"
+  },
+  "repository": {
+  "type": "git",
+   "https://github.com/techknohauz/back-end-project-week.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "cors": "^2.8.5",
+      "dotenv": "^6.2.0",
+      "express": "^4.16.4",
+      "helmet": "^3.15.0",
+      "jsonwebtoken": "^8.4.0",
+      "knex": "^0.16.2",
+      "sqlite3": "^4.0.4"
+    },
+    "devDependencies": {
+      "nodemon": "^1.18.7"
+    }
+  }    

@@ -5,5 +5,6 @@ const noteRouters = require("../api/noteRouters");
 };
 
  module.exports = {
-  noteRouters: notes
+    noteRouters: notes,
+    userRouters: users
 };
