@@ -1,6 +1,6 @@
 const db = require("../dbConfig");
 
- module.exports = {
+module.exports = {
   get,
   insert,
   update,
@@ -8,22 +8,22 @@ const db = require("../dbConfig");
 };
 
 function get(id) {
-    const query = db("notes");
-    if (id) return query.where({ _id: Number(id) }).first();
-    return query;
+  const query = db("notes");
+  if (id) return query.where({ _id: Number(id) }).first();
+  return query;
 }
 
- function insert(note) {
+function insert(note) {
   return db("notes").insert(note);
 }
 
- function update(id, note) {
+function update(id, note) {
   return db("notes")
     .where({ _id: Number(id) })
     .update(note);
 }
 
- function remove(id) {
+function remove(id) {
   return db("notes")
     .where({ _id: Number(id) })
     .del();

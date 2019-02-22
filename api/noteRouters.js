@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
- const db = require("../database/helpers/notesModel");
+const db = require("../database/helpers/notesModel");
 
- // ====================== ENDPOINTS ======================
+// ====================== ENDPOINTS ======================
 // GET notes
 router.get("/", (_, res) => {
   db.get()
@@ -13,11 +13,11 @@ router.get("/", (_, res) => {
     .catch(err => res.status(500).json({ message: "Error fetching", err }));
 });
 
- // GET note by id
+// GET note by id
 router.get("/:id", (req, res) => {
   const { id } = req.params;
 
-   db.get(id)
+  db.get(id)
     .then(note => {
       if (!note) return res.status(404).json({ message: "Note Not Found" });
       res.status(200).json(note);
@@ -27,21 +27,21 @@ router.get("/:id", (req, res) => {
 
 // POST new note
 router.post("/create", (req, res) => {
-    const newNote = req.body;
-  
-     db.insert(newNote)
-      .then(id => {
-        res.status(201).json({ message: `ID: ${id} created` });
-      })
-      .catch(err => res.status(500).json({ message: "Error posting", err }));
-  });
+  const newNote = req.body;
 
- // UPDATE existing note
+  db.insert(newNote)
+    .then(id => {
+      res.status(201).json({ message: `ID: ${id} created` });
+    })
+    .catch(err => res.status(500).json({ message: "Error posting", err }));
+});
+
+// UPDATE existing note
 router.put("/:id", (req, res) => {
-    const { id } = req.params;
-    const updateNote = req.body;
-  
-    db.update(id, updateNote)
+  const { id } = req.params;
+  const updateNote = req.body;
+
+  db.update(id, updateNote)
     .then(count => {
       if (!count)
         return res.status(404).json({ message: `ID: ${id} Not Found` });
@@ -61,6 +61,6 @@ router.delete("/:id", (req, res) => {
       res.status(200).json({ message: `ID: ${id} deleted` });
     })
     .catch(err => res.status(500).json({ message: "Error deleting", err }));
-  });
-   
- module.exports = router;
+});
+
+module.exports = router;

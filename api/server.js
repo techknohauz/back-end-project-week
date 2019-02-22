@@ -15,7 +15,7 @@ server.get("/", (_, res) => {
   res
     .status(200)
     .send(
-      "Hi! To see Lambda Notes API, go to <a href='http://localhost:9500/api/notes'>./api/notes</a>"
+      "Hi everyone! To see Lambda Notes API, go to <a href='https://api-lambda-notes.herokuapp.com/api/notes'>./api/notes</a>"
     );
 });
 
